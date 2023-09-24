@@ -1,10 +1,11 @@
 // referencia a tbody de la tabla
-const tablaBody = document.getElementById('tablaBody');
+const tablaBody = document.querySelector('#tablaBody');
 
 // URL del API
 const url = 'https://650cf20447af3fd22f681060.mockapi.io/registro/registros';
 
 
+// leer la tabla del API
 fetch(url)
     .then(response => response.json())
     .then(data => {
