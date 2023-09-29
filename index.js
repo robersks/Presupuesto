@@ -10,12 +10,12 @@ fetch(url)
     .then(data => {
         // Recorre los datos y agrega cada registro a la tabla
         data.forEach(registro => {
-            const { id, valor, opcion } = registro; // Extraer los valores de cada registro
+            const { id, valor, tipo } = registro; // Extraer los valores de cada registro
             const fila = `
                 <tr>
                     <td>${id}</td>
                     <td>${valor}</td>
-                    <td>${opcion}</td>
+                    <td>${tipo}</td>
                 </tr>
             `;
             tablaBody.innerHTML += fila; // Agrega la fila a la tabla
