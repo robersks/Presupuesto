@@ -17,26 +17,34 @@ fetch(url)
                     <td>${valor}</td>
                     <td>${tipo}</td>
                     <td>
-                        <button  id="${id}" class="editar">
+                        <button  id="${id}" class="btnEditar">
                             Editar
                         </button>
                     </td>
                     <td>
-                        <button  id="${id}" class="eliminar">
+                        <button  id="${id}" class="btnEliminar">
                             Eliminar
                         </button>
                     </td>
                 </tr>
             `;
-            
             tablaBody.innerHTML += fila; // Agrega la fila a la tabla
         });
+
+        const botonEliminar = document.querySelectorAll(".btnEliminar");
+        botonEliminar.forEach(registroEspecifico => {
+            registroEspecifico.addEventListener("click", () => {
+                funeliminarRegistro(registroEspecifico.id);
+            });
+        });
+
     })
+
     .catch(err => console.error(err));
 
 
 
-// enviar a la api
+// Enviar a la api
 const formulario = document.querySelector("#registroFormulario");
 formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -49,4 +57,16 @@ formulario.addEventListener("submit", async (e) => {
     let resp = await (await fetch(url, config)).json();
     location.reload();
 });
+
+// Funcion eliminar registro
+const funeliminarRegistro = async (id) => {
+    let config = {
+        method: "DELETE",
+        headers: { "content-type": "application/json" }
+    };
+    let resp = await (await fetch(url + `/${id}`, config)).json();
+    location.reload();
+};
+
+
 
