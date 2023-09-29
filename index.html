@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,19 +13,22 @@
     <h1>Presupuesto</h1><br>
     <h3>Registro de ingresos y egresos:</h3>
 
-    <form action="">
-        <label for="valor">Ingresos:</label>
-        <input id="valor" placeholder="Ingrese el valor" type="number"><br><br>
-        <label for="tipo">Tipo:</label>
-        <select name="" id="tipo">
-            <option value="">Seleccionar...</option>
-            <option value="">Ingreso</option>
-            <option value="">Egreso</option>
-        </select> <br><br>
-        <input type="submit" value="Enviar">
-    </form>
+    <div >
+        <form id="registroFormulario" action="">
+            <label for="valor">Ingresos:</label>
+            <input id="valor" placeholder="Ingrese el valor" type="number"><br><br>
+            <label>Tipo:</label>
+            <div>
+                <input type="radio" id="ingreso" name="opcion" value="Ingreso"><label for="ingreso">Ingreso</label>
+                <input type="radio" id="egreso" name="opcion" value="Egreso"><label for="egreso">Egreso</label>
+            </div>
+            <br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
     <br><br>
-    
+
     <div class="divTabla">
         <table class="tabla">
             <thead>
