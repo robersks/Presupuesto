@@ -16,30 +16,37 @@ fetch(url)
                     <td>${id}</td>
                     <td>${valor}</td>
                     <td>${tipo}</td>
+                    <td>
+                        <button  id="${id}" class="editar">
+                            Editar
+                        </button>
+                    </td>
+                    <td>
+                        <button  id="${id}" class="eliminar">
+                            Eliminar
+                        </button>
+                    </td>
                 </tr>
             `;
+            
             tablaBody.innerHTML += fila; // Agrega la fila a la tabla
         });
     })
-    .catch(err => console.error(err));  
+    .catch(err => console.error(err));
 
 
 
 // enviar a la api
-
 const formulario = document.querySelector("#registroFormulario");
-formulario.addEventListener("submit",async(e)=>{
+formulario.addEventListener("submit", async (e) => {
     e.preventDefault();
     let fila = Object.fromEntries(new FormData(e.target));
     let config = {
         method: "POST",
-        headers: {"content-type":"application/json"},
+        headers: { "content-type": "application/json" },
         body: JSON.stringify(fila)
     };
     let resp = await (await fetch(url, config)).json();
     location.reload();
 });
-
-
-
 
