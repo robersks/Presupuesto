@@ -31,10 +31,20 @@ fetch(url)
             tablaBody.innerHTML += fila; // Agrega la fila a la tabla
         });
 
+        //boton eliminar
         const botonEliminar = document.querySelectorAll(".btnEliminar");
         botonEliminar.forEach(registroEspecifico => {
             registroEspecifico.addEventListener("click", () => {
                 funeliminarRegistro(registroEspecifico.id);
+            });
+        });
+
+        // boton editar
+        const botonEditar = document.querySelectorAll(".btnEditar");
+        botonEditar.forEach(registroEspecifico => {
+            registroEspecifico.addEventListener("click", () => {
+                dialog.showModal();
+                editarDato(registroEspecifico.id);
             });
         });
 
@@ -69,4 +79,20 @@ const funeliminarRegistro = async (id) => {
 };
 
 
-
+// Funcion editar registro 
+const dialog = document.querySelector("dialog");
+const editarFormulario = document.querySelector("#frmEditar");
+const editarDato = (id) => {
+    editarFormulario.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let fila = Object.fromEntries(new FormData(e.target));
+        let config = {
+            method: "PUT",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(fila)
+        };
+        let resp = await (await fetch(url + `/${id}`, config)).json();
+        dialog.close();
+        location.reload();
+    })
+};
