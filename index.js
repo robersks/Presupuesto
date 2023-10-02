@@ -29,6 +29,12 @@ fetch(url)
                 </tr>
             `;
             tablaBody.innerHTML += fila; // Agrega la fila a la tabla
+            
+            //actualizar montos
+            updateTotal();
+            updateTotalIngresos();
+            updateTotalEgresos();
+
         });
 
         //boton eliminar
@@ -104,5 +110,58 @@ const cuadroDialogo = document.querySelector('.cuadroDialogo');
 
 // Agregar un evento de clic al botón de cerrar
 cerrarBoton.addEventListener('click', () => {
-  cuadroDialogo.close(); // Cierra el cuadro de diálogo
+    cuadroDialogo.close(); // Cierra el cuadro de diálogo
 });
+
+//----------------------------------------- funcionalidad de balance
+function updateTotal() {
+    total = 0;
+    let rows = tablaBody.querySelectorAll('tr'); 
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let valor = parseFloat(row.querySelector('td:nth-child(2)').textContent); 
+        let tipo = row.querySelector('td:nth-child(3)').textContent; 
+
+        if (tipo === 'Ingreso') {
+            total += valor;
+        } else if (tipo === 'Egreso') { 
+            total -= valor;
+        }
+    }
+    const totalAmountElement = document.getElementById('totalAmount');
+    totalAmountElement.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+function updateTotalIngresos() {
+    totalIngresos = 0;
+    let rows = tablaBody.querySelectorAll('tr'); 
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let valor = parseFloat(row.querySelector('td:nth-child(2)').textContent); 
+        let tipo = row.querySelector('td:nth-child(3)').textContent; 
+
+        if (tipo === 'Ingreso') {
+            totalIngresos += valor;
+        }
+    }
+    const totalIngresosElement = document.getElementById('totalIngresos');
+    totalIngresosElement.textContent = `Total de Ingresos: $${totalIngresos.toFixed(2)}`;
+}
+
+function updateTotalEgresos() {
+    totalEgresos = 0;
+    let rows = tablaBody.querySelectorAll('tr'); 
+    for (let i = 0; i < rows.length; i++) {
+        let row = rows[i];
+        let valor = parseFloat(row.querySelector('td:nth-child(2)').textContent); 
+        let tipo = row.querySelector('td:nth-child(3)').textContent; 
+
+        if (tipo === 'Egreso') { 
+            totalEgresos += valor;
+        }
+    }
+
+    const totalEgresosElement = document.getElementById('totalEgresos');
+    totalEgresosElement.textContent = `Total de Egresos: $${totalEgresos.toFixed(2)}`;
+}
+// -----------------------------------------------
