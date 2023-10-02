@@ -96,3 +96,13 @@ const editarDato = (id) => {
         location.reload();
     })
 };
+
+
+// Obtener el botón de cerrar y el cuadro de diálogo
+const cerrarBoton = document.getElementById('cerrarCuadroDialogo');
+const cuadroDialogo = document.querySelector('.cuadroDialogo');
+
+// Agregar un evento de clic al botón de cerrar
+cerrarBoton.addEventListener('click', () => {
+  cuadroDialogo.close(); // Cierra el cuadro de diálogo
+});

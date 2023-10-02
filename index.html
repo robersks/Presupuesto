@@ -16,9 +16,9 @@
 
     <div >
         <form id="registroFormulario" >
-            <label for="valor">Ingresos:</label>
+            <label for="valor">Ingresos:</label><br><br>
             <input id="valor" name="valor" placeholder="Ingrese el valor" type="number"><br><br>
-            <label>Tipo:</label>
+            <label>Tipo:</label><br><br>
             <div>
                 <input type="radio"  id="ingreso" name="tipo" value="Ingreso"><label for="ingreso" checked>Ingreso</label>
                 <input type="radio" id="egreso" name="tipo" value="Egreso"><label for="egreso">Egreso</label>
@@ -47,11 +47,12 @@
     </div>
 
     <dialog class="cuadroDialogo">
+        <button class="cerrarDialogo" id="cerrarCuadroDialogo">Salir</button><br><br>
         <h2>Editar Registro</h2>
         <form id="frmEditar">
-            <input type="number" name="valor" placeholder="Ingrese el valor">
+            <input type="number" name="valor" placeholder="Ingrese el valor"> <br><br>
             <input type="radio" checked id="ingreso" name="tipo" value="Ingreso"><label for="tres">Ingreso</label>
-            <input type="radio" id="egreso" name="tipo" value="Egreso"><label for="cuatro">Gasto</label>
+            <input type="radio" id="egreso" name="tipo" value="Egreso"><label for="cuatro">Egreso</label><br><br>
             <input type="submit" value="Guardar">
         </form>
     </dialog>
