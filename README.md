@@ -37,12 +37,21 @@ Si cometes un error o simplemente deseas eliminar un registro, puedes hacerlo de
 En caso de que necesites corregir información en un registro existente, puedes editarlos sin problemas. Simplemente selecciona el registro que deseas modificar y realiza los cambios necesarios.
 
 ---
+
+### Vista de la estructura json
+![Texto Alternativo](img/img5.png)
+
+---
+### API:
+
+https://mockapi.io/ 
+
+---
 ## Lenguajes:
 
 - JavaScript
 - Html
 - Css
-
 
 ---
 ### ¿Te gustó esta plataforma?
