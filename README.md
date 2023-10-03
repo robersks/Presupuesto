@@ -11,7 +11,16 @@ Funcionalidades principales:
 
 ## Funcionalidades:
 
-### 1. Agregar un Registro
+---
+
+### 1. Ver balance
+![Texto Alternativo](img/img6.png)
+
+Aquí podremos ver el balance del presupuesto
+
+---
+
+### 2. Agregar un Registro
 
 ![Texto Alternativo](img/img2.png)
    
@@ -22,7 +31,7 @@ Puedes añadir nuevos registros de ingresos o egresos proporcionando la siguient
 
 --- 
 
-### 2. Eliminar un Registro
+### 3. Eliminar un Registro
 
 ![Texto Alternativo](img/img3.png)
 
@@ -30,7 +39,7 @@ Puedes añadir nuevos registros de ingresos o egresos proporcionando la siguient
 Si cometes un error o simplemente deseas eliminar un registro, puedes hacerlo de manera fácil. La aplicación te permite seleccionar el registro que deseas eliminar.
 
 ---
-### 3. Editar un Registro
+### 4. Editar un Registro
 
 ![Texto Alternativo](img/img4.png)
 
