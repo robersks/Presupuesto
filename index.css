@@ -23,6 +23,16 @@ h1,h3 {
     padding: 5%;
 }
 
+.montos{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5%;
+}
+
 label {
     margin-bottom: 10px;
     color: #555;

@@ -1,8 +1,10 @@
 // referencia a tbody de la tabla
 const tablaBody = document.querySelector('#tablaBody');
 
-// URL del API
-const url = 'https://650cf20447af3fd22f681060.mockapi.io/registro/registros';
+const url = 'https://650cf20447af3fd22f681060.mockapi.io/registro/registros'; // URL API mockAPI
+
+//const url = 'http://127.0.0.221:5020/presupuesto'; // URL json server    
+
 
 // leer la tabla del API
 fetch(url)
@@ -129,7 +131,7 @@ function updateTotal() {
         }
     }
     const totalAmountElement = document.getElementById('totalAmount');
-    totalAmountElement.textContent = `Total: $${total.toFixed(2)}`;
+    totalAmountElement.innerHTML = `<b>Patrimonio:</b> &nbsp $ ${total.toFixed(2)}`;
 }
 
 function updateTotalIngresos() {
@@ -145,7 +147,7 @@ function updateTotalIngresos() {
         }
     }
     const totalIngresosElement = document.getElementById('totalIngresos');
-    totalIngresosElement.textContent = `Total de Ingresos: $${totalIngresos.toFixed(2)}`;
+    totalIngresosElement.innerHTML = `<b>Total de Ingresos:</b>&nbsp  $ ${totalIngresos.toFixed(2)}`;
 }
 
 function updateTotalEgresos() {
@@ -162,6 +164,6 @@ function updateTotalEgresos() {
     }
 
     const totalEgresosElement = document.getElementById('totalEgresos');
-    totalEgresosElement.textContent = `Total de Egresos: $${totalEgresos.toFixed(2)}`;
+    totalEgresosElement.innerHTML = `<b>Total de Egresos:</b>&nbsp $ ${totalEgresos.toFixed(2)}`;
 }
 // -----------------------------------------------
