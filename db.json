@@ -1,0 +1,19 @@
+{
+  "presupuesto": [
+    {
+      "valor": "1000",
+      "tipo": "Ingreso",
+      "id": 1
+    },
+    {
+      "valor": "400",
+      "tipo": "Egreso",
+      "id": 2
+    },
+    {
+      "valor": "50",
+      "tipo": "Egreso",
+      "id": 3
+    }
+  ]
+}

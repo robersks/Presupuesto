@@ -1,9 +1,9 @@
 // referencia a tbody de la tabla
 const tablaBody = document.querySelector('#tablaBody');
 
-const url = 'https://650cf20447af3fd22f681060.mockapi.io/registro/registros'; // URL API mockAPI
+//const url = 'https://650cf20447af3fd22f681060.mockapi.io/registro/registros'; // URL API mockAPI
 
-//const url = 'http://127.0.0.221:5020/presupuesto'; // URL json server    
+const url = 'http://127.0.0.221:5020/presupuesto'; // URL json server    
 
 
 // leer la tabla del API
